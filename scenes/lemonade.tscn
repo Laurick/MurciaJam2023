@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://bng5u8ycaafn8"]
+
+[ext_resource type="Script" path="res://scripts/lemonade.gd" id="1_tlco5"]
+[ext_resource type="Texture2D" uid="uid://njui2tfn3ov8" path="res://images/lemonade.tres" id="2_5b1d3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xviqv"]
+radius = 5.00625
+
+[node name="lemonade" type="Node2D"]
+scale = Vector2(4, 4)
+script = ExtResource("1_tlco5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_5b1d3")
+
+[node name="lemonade" type="Area2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="lemonade"]
+shape = SubResource("CircleShape2D_xviqv")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="area_entered" from="lemonade" to="." method="_on_lemonade_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

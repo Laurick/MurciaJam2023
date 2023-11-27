@@ -1,0 +1,29 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bhifbl2cfnh5i"]
+
+[ext_resource type="FontFile" uid="uid://cbcurwb5jx82k" path="res://fonts/Kenney Pixel.ttf" id="1_vdjnq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ywgom"]
+bg_color = Color(0.552941, 0.647059, 0.952941, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lthdc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_887r5"]
+bg_color = Color(0.517647, 0.776471, 0.411765, 1)
+
+[resource]
+Button/font_sizes/font_size = 30
+Button/fonts/font = ExtResource("1_vdjnq")
+Button/styles/normal = SubResource("StyleBoxFlat_ywgom")
+Label/font_sizes/font_size = 30
+Label/fonts/font = ExtResource("1_vdjnq")
+PopupMenu/font_sizes/font_separator_size = 30
+PopupMenu/font_sizes/font_size = 30
+PopupMenu/fonts/font = ExtResource("1_vdjnq")
+PopupMenu/fonts/font_separator = ExtResource("1_vdjnq")
+ProgressBar/font_sizes/font_size = 20
+ProgressBar/fonts/font = ExtResource("1_vdjnq")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_lthdc")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_887r5")
+Tree/font_sizes/font_size = 30
+Tree/fonts/font = ExtResource("1_vdjnq")
+Tree/fonts/title_button_font = ExtResource("1_vdjnq")

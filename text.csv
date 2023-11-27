@@ -1,0 +1,20 @@
+key,es,en
+PLAY_BUTTON, JUGAR ,  PLAY  
+MADE_FOR,Hecho para la Murcia Game Jam 2023 #MJAM23,Made for Murcia Game Jam 2023 #MJAM23
+TITLE,LEMONADE RUSH,LEMONADE RUSH
+TIME_LABEL,Tiempo\n%s,Time\n%s
+SCORE_LABEL,Puntuación\n%d,Score\n%d
+LIFE_LABEL,Vidas\n%d,Lives\n%d
+LEVEL_UP,¡Nivel %d alcanzado!,Level %d reached!
+GAME_OVER,"Oh no, has perdido :(\n\nTus estadísticas:\nTiempo jugado: %s\nPuntuación: %d\nNivel: %d","Oh no, you lose :(\n\nYour stats:\nTime played: %s\nScore: %d\nLevel: %d"
+GAME_OVER_RETRY,REINTENTAR,RETRY
+HEALTH_UP_UPGRADE,+1 Vida máxima,+1 Health max
+CURE_UPGRADE,Cura instantánea,Instant cure
+SPEED_UP_UPGRADE,+10% de velocidad,+10% of speed
+LEMON_EFICIENCY_UPGRADE,+1 a limon recogido,+1 pick up lemon
+LEMON_RATE_UPGRADE,-0.1s tasa de limones,-0.1 lemon rate
+LEMON_STORAGE_UPGRADE,+10 almacenamiento de limones, +10 lemon storage
+POWER_UP_UPGRADE,+1 fuerza limonada,+1 lemonade power
+LEMONADE_SPEED_UPGRADE,+10 velocidad de limonada,+10 lemonade speed
+LEMONADE_RATE_UPGRADE,-0.1s tasa de limonadas,-0.1s lemonade rate
+GAME_OVER_EXIT,SALIR,EXIT

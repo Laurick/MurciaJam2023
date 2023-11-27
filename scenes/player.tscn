@@ -1,0 +1,132 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtkb0sj46r0oj"]
+
+[ext_resource type="Texture2D" uid="uid://biga5btaolebl" path="res://images/char.tres" id="1_3ba8d"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_57beo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_lgbyw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xs0u1"]
+radius = 11.3382
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfh2e"]
+size = Vector2(16, 14)
+
+[sub_resource type="Animation" id="Animation_sha54"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_rl6ws"]
+resource_name = "blink"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7jxfc"]
+resource_name = "walk"
+length = 0.6
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.15, 0.3, 0.45, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.174533, -1.49012e-08, -0.174533, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kxx82"]
+_data = {
+"RESET": SubResource("Animation_sha54"),
+"blink": SubResource("Animation_rl6ws"),
+"walk": SubResource("Animation_7jxfc")
+}
+
+[node name="player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_57beo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 7)
+texture = ExtResource("1_3ba8d")
+offset = Vector2(0, -7)
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.68, 0.557686)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+scale = Vector2(0.647058, 0.7131)
+shape = SubResource("CircleShape2D_lgbyw")
+
+[node name="pick" type="Area2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pick"]
+shape = SubResource("CircleShape2D_xs0u1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_kfh2e")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_kxx82")
+}
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, 6.5)
+emitting = false
+lifetime = 0.1
+speed_scale = 0.3
+emission_shape = 1
+emission_sphere_radius = 5.0
+direction = Vector2(0, 2)
+spread = 180.0
+initial_velocity_min = 27.97
+initial_velocity_max = 104.9
+scale_amount_max = 3.0
+color = Color(0.811765, 0.509804, 0.329412, 1)
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="pick" to="." method="_on_pick_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

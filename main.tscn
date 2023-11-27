@@ -1,0 +1,173 @@
+[gd_scene load_steps=6 format=3 uid="uid://cmijyi8w5ui77"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_fq7yj"]
+[ext_resource type="Texture2D" uid="uid://dwb8mi7daobd2" path="res://images/menu.jpg" id="2_am5ko"]
+[ext_resource type="PackedScene" uid="uid://cuv8mtn1eafl6" path="res://scenes/slider.tscn" id="2_s532l"]
+[ext_resource type="Theme" uid="uid://b0qdbfedic5wr" path="res://theme/default_theme.tres" id="3_05ump"]
+[ext_resource type="Texture2D" uid="uid://6y3ge0yxb4qx" path="res://images/space.png" id="3_e3ewj"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_fq7yj")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_am5ko")
+expand_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -207.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="ButtonPlay" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("3_05ump")
+theme_override_font_sizes/font_size = 60
+text = "PLAY_BUTTON"
+flat = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="space4" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="space6" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="space7" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="space8" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="space13" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="space10" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_05ump")
+theme_override_font_sizes/font_size = 28
+text = "MUSIC_OPTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SliderMusic" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_s532l")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="space" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("3_05ump")
+theme_override_font_sizes/font_size = 28
+text = "FX_OPTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SliderFSX" parent="VBoxContainer/HBoxContainer" instance=ExtResource("2_s532l")]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="space2" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="space3" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="space11" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="space12" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="space9" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="space5" type="TextureRect" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_stretch_ratio = 3.0
+texture = ExtResource("3_e3ewj")
+expand_mode = 3
+stretch_mode = 4
+
+[connection signal="pressed" from="VBoxContainer/ButtonPlay" to="." method="_on_button_play_pressed"]
+[connection signal="value_update" from="VBoxContainer/HBoxContainer/SliderMusic" to="." method="_on_slider_music_value_update"]
+[connection signal="value_setted" from="VBoxContainer/HBoxContainer/SliderFSX" to="." method="_on_slider_fsx_value_setted"]

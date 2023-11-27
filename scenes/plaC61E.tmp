@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtkb0sj46r0oj"]
+
+[ext_resource type="Texture2D" uid="uid://biga5btaolebl" path="res://images/char.tres" id="1_3ba8d"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_57beo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ygyjp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e5cj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kfh2e"]
+size = Vector2(16, 14)
+
+[node name="player" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_57beo")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3ba8d")
+
+[node name="hitbox" type="Area2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.68, 0.557686)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("RectangleShape2D_ygyjp")
+
+[node name="pick" type="Area2D" parent="."]
+position = Vector2(0, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="pick"]
+shape = SubResource("RectangleShape2D_0e5cj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_kfh2e")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
+[connection signal="area_entered" from="pick" to="." method="_on_pick_area_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

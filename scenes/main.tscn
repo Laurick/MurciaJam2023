@@ -1,0 +1,246 @@
+[gd_scene load_steps=14 format=3 uid="uid://c2rrcflsnsxot"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_pr03q"]
+[ext_resource type="Theme" uid="uid://bhifbl2cfnh5i" path="res://theme/theme.tres" id="2_pqjkb"]
+[ext_resource type="TileSet" uid="uid://dgyoj0jw5roqm" path="res://images/tile_set.tres" id="2_sfxta"]
+[ext_resource type="Texture2D" uid="uid://ccvm2okh2ga6g" path="res://images/fruit.tres" id="2_yj1pf"]
+[ext_resource type="Texture2D" uid="uid://biga5btaolebl" path="res://images/char.tres" id="5_lm2pf"]
+[ext_resource type="Texture2D" uid="uid://b4ey5x8u068oy" path="res://images/tile_0153.png" id="5_meev8"]
+[ext_resource type="Texture2D" uid="uid://cfdcfww35yyt6" path="res://images/tile_0154.png" id="6_l4hxp"]
+[ext_resource type="Texture2D" uid="uid://njui2tfn3ov8" path="res://images/lemonade.tres" id="6_sxydj"]
+[ext_resource type="Texture2D" uid="uid://b5sn53aeh28bp" path="res://images/tile_0155.png" id="7_s5840"]
+[ext_resource type="Texture2D" uid="uid://c6tpg8bqsny3u" path="res://images/musicOn.png" id="10_68bod"]
+[ext_resource type="Texture2D" uid="uid://0kl6e7ej5sra" path="res://images/audioOn.png" id="11_xkcvf"]
+
+[sub_resource type="Gradient" id="Gradient_g7whv"]
+colors = PackedColorArray(0.707492, 0.773651, 0.97103, 1, 0.552941, 0.647059, 0.952941, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_sqql8"]
+gradient = SubResource("Gradient_g7whv")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_pqjkb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_sqql8")
+
+[node name="background" type="TileMap" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(5, 5)
+tile_set = ExtResource("2_sfxta")
+cell_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(458752, 65536, 2, 458753, 65536, 2, 458754, 65536, 2, 458755, 65536, 2, 458756, 65536, 2, 458757, 65536, 2, 393221, 65536, 1, 393220, 65536, 1, 393219, 65536, 1, 393218, 65536, 1, 393217, 65536, 1, 393216, 65536, 1, 393222, 65536, 1, 458758, 65536, 2, 458751, 65536, 1, 524287, 65536, 2, 327682, 65536, 6, 327683, 131072, 6, 327684, 65536, 6, 327685, 65536, 6, 327686, 65536, 6, 262146, 65536, 6, 262147, 65536, 6, 262148, 65536, 6, 262149, 65536, 6, 262150, 65536, 6, 262145, 65536, 6, 327681, 65536, 6, 262144, 65536, 6, 327680, 65536, 6)
+
+[node name="background2" type="TileMap" parent="."]
+position = Vector2(-1, 1)
+rotation = 1.5708
+scale = Vector2(5, 5)
+tile_set = ExtResource("2_sfxta")
+cell_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(458752, 65536, 2, 458753, 65536, 2, 458754, 65536, 2, 458755, 65536, 2, 458756, 65536, 2, 458757, 65536, 2, 393221, 65536, 1, 393220, 65536, 1, 393219, 65536, 1, 393218, 65536, 1, 393217, 65536, 1, 393216, 65536, 1, 393222, 65536, 1, 458758, 65536, 2, 458751, 65536, 1, 524287, 65536, 2, 327682, 0, 6, 327683, 131072, 6, 327684, 65536, 6, 327685, 65536, 6, 327686, 65536, 6, 262146, 0, 6, 262147, 65536, 6, 262148, 65536, 6, 262149, 65536, 6, 262150, 65536, 6, 262145, 196608, 6, 327681, 196608, 6, 262144, 65536, 6, 327680, 65536, 6, -458749, 0, 6, -393213, 0, 6, -327677, 0, 6, -262141, 0, 6, -196605, 0, 6, -131069, 0, 6, -65533, 0, 6)
+
+[node name="details" type="TileMap" parent="."]
+position = Vector2(-1, 1)
+scale = Vector2(5, 5)
+tile_set = ExtResource("2_sfxta")
+cell_quadrant_size = 64
+format = 2
+layer_0/tile_data = PackedInt32Array(458752, 65536, 2, 393221, 65536, 1, 393220, 65536, 1, 393219, 65536, 1, 393218, 65536, 1, 393217, 65536, 1, 393216, 65536, 1, 458751, 65536, 1, 524287, 65536, 2, 327681, 589824, 4, 327680, 262144, 1, 262144, 262144, 0)
+
+[node name="Control" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+script = ExtResource("1_pr03q")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Button" type="Button" parent="Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme = ExtResource("2_pqjkb")
+theme_override_font_sizes/font_size = 70
+text = "PLAY_BUTTON"
+
+[node name="OptionButton" type="OptionButton" parent="Control/VBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 0
+theme = ExtResource("2_pqjkb")
+item_count = 2
+selected = 0
+popup/item_0/text = "Español"
+popup/item_0/id = 0
+popup/item_1/text = "English"
+popup/item_1/id = 1
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_pqjkb")
+theme_override_font_sizes/font_size = 100
+text = "TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="TextureRect" type="TextureRect" parent="Control/VBoxContainer"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+texture = ExtResource("2_yj1pf")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Control/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 3
+size_flags_stretch_ratio = 8.35
+theme_override_constants/separation = 20
+
+[node name="music" type="VSlider" parent="Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+step = 10.0
+value = 50.0
+
+[node name="fx" type="VSlider" parent="Control/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+step = 10.0
+value = 50.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="Label" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_pqjkb")
+text = "v1.0.0"
+
+[node name="Label2" type="Label" parent="Control/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_pqjkb")
+text = "MADE_FOR"
+
+[node name="cloud" type="Node2D" parent="."]
+position = Vector2(33, -615)
+rotation = 3.14159
+scale = Vector2(15, 15)
+
+[node name="Tile0153" type="Sprite2D" parent="cloud"]
+position = Vector2(-33.4732, -55.277)
+rotation = 0.00229514
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_meev8")
+
+[node name="Tile0154" type="Sprite2D" parent="cloud"]
+position = Vector2(-29.8732, -55.2687)
+rotation = 0.00229514
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_l4hxp")
+
+[node name="Tile0155" type="Sprite2D" parent="cloud"]
+position = Vector2(-26.2732, -55.2605)
+rotation = 0.00229514
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_s5840")
+
+[node name="cloud2" type="Node2D" parent="."]
+position = Vector2(-898, -1606)
+rotation = 3.14159
+scale = Vector2(30, 30)
+
+[node name="Tile0153" type="Sprite2D" parent="cloud2"]
+position = Vector2(-33.4732, -55.277)
+rotation = 0.00229514
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("5_meev8")
+
+[node name="Tile0154" type="Sprite2D" parent="cloud2"]
+position = Vector2(-29.8732, -55.2687)
+rotation = 0.00229514
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("6_l4hxp")
+
+[node name="Tile0155" type="Sprite2D" parent="cloud2"]
+position = Vector2(-26.2732, -55.2605)
+rotation = 0.00229514
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("7_s5840")
+
+[node name="Char" type="Sprite2D" parent="."]
+position = Vector2(350, 446)
+rotation = -0.00229514
+scale = Vector2(5, 5)
+texture = ExtResource("5_lm2pf")
+
+[node name="Fruit" type="Sprite2D" parent="."]
+position = Vector2(29, 368)
+rotation = 0.674388
+scale = Vector2(2, 2)
+texture = ExtResource("2_yj1pf")
+
+[node name="Fruit2" type="Sprite2D" parent="."]
+position = Vector2(56, 412)
+rotation = -0.442688
+scale = Vector2(2, 2)
+texture = ExtResource("2_yj1pf")
+
+[node name="Fruit3" type="Sprite2D" parent="."]
+position = Vector2(21, 431)
+rotation = 0.0930037
+scale = Vector2(2, 2)
+texture = ExtResource("2_yj1pf")
+
+[node name="Lemonade" type="Sprite2D" parent="."]
+position = Vector2(100, 394)
+scale = Vector2(3, 3)
+texture = ExtResource("6_sxydj")
+
+[node name="Lemonade2" type="Sprite2D" parent="."]
+position = Vector2(168, 465)
+scale = Vector2(3, 3)
+texture = ExtResource("6_sxydj")
+
+[node name="MusicOn" type="Sprite2D" parent="."]
+position = Vector2(447, 278)
+texture = ExtResource("10_68bod")
+
+[node name="AudioOn" type="Sprite2D" parent="."]
+position = Vector2(489, 278)
+texture = ExtResource("11_xkcvf")
+
+[connection signal="button_up" from="Control/VBoxContainer2/Button" to="Control" method="_on_button_button_up"]
+[connection signal="item_selected" from="Control/VBoxContainer2/OptionButton" to="Control" method="_on_option_button_item_selected"]
+[connection signal="value_changed" from="Control/VBoxContainer/HBoxContainer2/music" to="Control" method="_on_music_value_changed"]
+[connection signal="drag_ended" from="Control/VBoxContainer/HBoxContainer2/fx" to="Control" method="_on_fx_drag_ended"]
